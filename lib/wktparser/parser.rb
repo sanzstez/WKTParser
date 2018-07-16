@@ -10,7 +10,7 @@ module WKTParser
       rule(:comma)          { str(",")    }
       rule(:lparen)         { str("(")    }
       rule(:rparen)         { str(")")    }
-      rule(:number)         { match(/^[+-]?(?:(?!0)\d{1,2}|0)(?:\.[05])?$/)  }
+      rule(:number)         { match('[0-9]')  }
       rule(:operator)       { stri("POINT") | stri("LINESTRING") | stri("POLYGON") }
 
       # Blocks

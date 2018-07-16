@@ -1,9 +1,8 @@
 require 'rubygems'
 require 'parslet'
 
-
-Dir["lib/wktparser/*.rb"].each {|f| require File.realpath(File.new(f))}
-
+require_relative "wktparser/parser"
+require_relative "wktparser/transformer"
 
 module WKTParser
   def self.parse(wkt)

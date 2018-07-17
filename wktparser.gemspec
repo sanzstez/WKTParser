@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name    = 'wktparser'
-  gem.version = '0.1.5'
+  gem.version = '0.1.6'
   gem.date    = Date.today.to_s
 
   gem.summary     = "Well-Known Text Parser"

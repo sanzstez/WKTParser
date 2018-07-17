@@ -12,7 +12,9 @@ module WKTParser
       rule(:rparen)         { str(")")    }
       #rule(:number)         { match('[0-9]')  }
       rule(:digit)          { match("[0-9]") }
-      rule(:number)          { str("-").maybe >> digit.repeat(1) >> str(".") >> digit.repeat(1) }
+      rule(:integer)        { str("-").maybe >> match("[1-9]") >> digit.repeat }
+      rule(:float)          { str("-").maybe >> digit.repeat(1) >> str(".") >> digit.repeat(1) }
+      rule(:number)         { float | integer }
       rule(:operator)       { stri("POINT") | stri("LINESTRING") | stri("POLYGON") }
 
       # Blocks
